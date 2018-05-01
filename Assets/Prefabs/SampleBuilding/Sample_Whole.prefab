@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2c494e505c21d429253217ad36b34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractureObject: {fileID: 1855021437362218, guid: ec6e1acf91a4f104bae705a16d01951a,
+  fractureObject: {fileID: 1280807359164318, guid: 89f3164a793d593489370e130f04aad4,
     type: 2}
   forceToBreak: 0.75

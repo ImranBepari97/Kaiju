@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &62534231
+--- !u!21 &109623939
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -246,26 +246,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114794860003157552, guid: 49936978e1ba6154aaf4008031339748,
-        type: 2}
-      propertyPath: forceToBreak
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 54472840538806190, guid: 49936978e1ba6154aaf4008031339748,
-        type: 2}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 65680327301561278, guid: 49936978e1ba6154aaf4008031339748,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54472840538806190, guid: 49936978e1ba6154aaf4008031339748,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49936978e1ba6154aaf4008031339748, type: 2}
   m_IsPrefabParent: 0
@@ -395,7 +375,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!43 &1347646065
+--- !u!43 &1394648047
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -568,12 +548,12 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1347646065}
+      objectReference: {fileID: 1394648047}
     - target: {fileID: 23570107870228550, guid: 096c3e884f0246e44853714dd837eb24,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 62534231}
+      objectReference: {fileID: 109623939}
     - target: {fileID: 1022334038651458, guid: 096c3e884f0246e44853714dd837eb24, type: 2}
       propertyPath: m_TagString
       value: Player
