@@ -9,6 +9,8 @@ public class Fracture : MonoBehaviour {
 	[SerializeField]
 	float forceToBreak;
 
+	[SerializeField]
+	float fractureModelRatio; //Ratio of the Whole:Fractured size
 	// Use this for initialization
 	void Start () {
 		
@@ -31,7 +33,9 @@ public class Fracture : MonoBehaviour {
 				Debug.Log ("Collision at " + controller.device.velocity.magnitude);
 				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak) {
 					//Replace?
-					Instantiate (fractureObject, transform.position, Quaternion.identity);
+					GameObject thing;
+					thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
+					thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
 					Destroy (this.gameObject);
 				}
 			}
