@@ -37,17 +37,23 @@ public class Fracture : MonoBehaviour {
 
 	void OnCollisionEnter(Collision coll) {
 		if(coll.gameObject.tag == "Player") {
-			
-
 			ControllerScript controller;
-
 			//Check if the force of the impact is big enough to fracture
 			if(controller = coll.gameObject.GetComponent<ControllerScript>()) {
 				
 				Debug.Log ("Collision at " + controller.device.velocity.magnitude);
-				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak && !hasBeenDestroyed) {
+				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak && !hasBeenDestroyed ) {
 					Break ();
 
+				}
+			}
+		}
+
+		if(coll.gameObject.tag == "Debris") {
+			Rigidbody rb; 
+			if (rb = coll.gameObject.GetComponent<Rigidbody> ()) {
+				if(rb.velocity.magnitude > forceToBreak * 2.25f && !hasBeenDestroyed) {
+					Break ();
 				}
 			}
 		}
