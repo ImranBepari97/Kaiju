@@ -5,15 +5,17 @@ using UnityEngine;
 public class Fracture : MonoBehaviour {
 	[SerializeField]
 	GameObject fractureObject;
-
 	[SerializeField]
 	float forceToBreak;
-
 	[SerializeField]
 	float fractureModelRatio; //Ratio of the Whole:Fractured size
+
+	bool hasBeenDestroyed; //Stops double spawning
+
+
 	// Use this for initialization
 	void Start () {
-		
+		hasBeenDestroyed = false;
 	}
 	
 	// Update is called once per frame
@@ -21,7 +23,7 @@ public class Fracture : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider coll) {
+	void OnCollisionEnter(Collision coll) {
 		if(coll.gameObject.tag == "Player") {
 			
 
@@ -31,12 +33,21 @@ public class Fracture : MonoBehaviour {
 			if(controller = coll.gameObject.GetComponent<ControllerScript>()) {
 				
 				Debug.Log ("Collision at " + controller.device.velocity.magnitude);
-				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak) {
+				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak && !hasBeenDestroyed) {
+					hasBeenDestroyed = true;
+					Destroy (this.gameObject);
 					//Replace?
 					GameObject thing;
-					thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
+
+					if (transform.parent != null) {
+						thing = Instantiate (fractureObject, transform.parent.position, Quaternion.identity);
+					} else {
+						thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
+					}
+
+
 					thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
-					Destroy (this.gameObject);
+
 				}
 			}
 		}

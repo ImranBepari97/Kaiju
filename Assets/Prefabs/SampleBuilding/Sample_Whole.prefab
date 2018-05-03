@@ -37,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249579510401380}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.29155862, y: 0.992, z: 0.271}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -2.767, y: 0.992, z: -0.055}
+  m_LocalScale: {x: 100, y: 99.99994, z: 99.99994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,7 +107,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249579510401380}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.005, y: 0.004999999, z: 0.019999996}
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2c494e505c21d429253217ad36b34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractureObject: {fileID: 1280807359164318, guid: 89f3164a793d593489370e130f04aad4,
+  fractureObject: {fileID: 1813411744636872, guid: ca2d7d585f4914a4782def634b9bbd70,
     type: 2}
   forceToBreak: 0.75
+  fractureModelRatio: 100
