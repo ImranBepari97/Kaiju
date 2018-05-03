@@ -41,13 +41,11 @@ public class Fracture : MonoBehaviour {
 					GameObject thing;
 					if (transform.parent != null) {
 						thing = Instantiate (fractureObject, transform.parent.position, Quaternion.identity);
+						thing.transform.localScale = new Vector3(transform.parent.localScale.x / fractureModelRatio, transform.parent.localScale.y / fractureModelRatio, transform.parent.localScale.z / fractureModelRatio);
 					} else {
 						thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
+						thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
 					}
-
-					//Scale the spawned thing properly
-					thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
-
 				}
 			}
 		}

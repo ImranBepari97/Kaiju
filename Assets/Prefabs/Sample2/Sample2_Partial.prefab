@@ -1092,8 +1092,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1827838189259348, guid: a896274554cf4484f852986bb70497e1,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114208224673832814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1107,8 +1107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1466442575167956, guid: f8daeb73eaaf70b48a5aa5b395fefec4,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114229627885487642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1122,8 +1122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1911920304173402, guid: 9c226f7a190c03744bef998a4e1f5ea4,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114232001049005638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1137,8 +1137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1398536118908752, guid: c3cafec09d9ea3842983be18f884ee30,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114250387524464344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1152,8 +1152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1420815742128822, guid: 28e9dddd14811024ba04afe4982a59ce,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114351795091193772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1167,8 +1167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1673265849040394, guid: bed9a5e643b897d4880d7b680cbd757f,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114496597018688994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1182,8 +1182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1129991172687154, guid: c1b448b1090a8554d806cf09e567d1cf,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114509450047722146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1197,8 +1197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1544994235798486, guid: c2649aea026b8ac4fad2e7b8c1f80e31,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114585247536041560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1212,8 +1212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1420122781747736, guid: 98092a5262f766b4bbb9f3ff5e75d3b0,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
 --- !u!114 &114666244492032510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1227,5 +1227,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureObject: {fileID: 1224791243779844, guid: f9e9b47196689d14db367e86b0e54004,
     type: 2}
-  forceToBreak: 0.5
-  fractureModelRatio: 100
+  forceToBreak: 0.75
+  fractureModelRatio: 1
