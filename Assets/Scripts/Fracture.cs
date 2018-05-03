@@ -37,15 +37,15 @@ public class Fracture : MonoBehaviour {
 					hasBeenDestroyed = true;
 					Destroy (this.gameObject);
 					//Replace?
-					GameObject thing;
 
+					GameObject thing;
 					if (transform.parent != null) {
 						thing = Instantiate (fractureObject, transform.parent.position, Quaternion.identity);
 					} else {
 						thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
 					}
 
-
+					//Scale the spawned thing properly
 					thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
 
 				}
