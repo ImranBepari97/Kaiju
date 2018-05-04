@@ -40,8 +40,6 @@ public class Fracture : MonoBehaviour {
 			ControllerScript controller;
 			//Check if the force of the impact is big enough to fracture
 			if(controller = coll.gameObject.GetComponent<ControllerScript>()) {
-				
-				Debug.Log ("Collision at " + controller.device.velocity.magnitude);
 				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak && !hasBeenDestroyed ) {
 					Break ();
 
@@ -61,8 +59,8 @@ public class Fracture : MonoBehaviour {
 
 	void Break() {
 		hasBeenDestroyed = true;
+		//Destroy this and replace it with the fractured version
 		Destroy (this.gameObject);
-		//Replace?
 
 		GameObject thing;
 		if (transform.parent != null) {
