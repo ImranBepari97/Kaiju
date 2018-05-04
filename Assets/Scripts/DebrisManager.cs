@@ -25,7 +25,11 @@ public class DebrisManager : MonoBehaviour {
 
 		debrisList [currentIndex] = this.gameObject;
 
-		currentIndex++;
+		currentIndex += 17;
 		currentIndex %= debrisList.Length;
+
+		if(currentIndex < 17) {
+			currentIndex = Random.Range (0,20);
+		}
 	}
 }
