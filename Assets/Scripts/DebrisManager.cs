@@ -4,7 +4,7 @@ using UnityEngine;
 //Circular Array manager for debris
 public class DebrisManager : MonoBehaviour {
 
-	static GameObject[] debrisList = new GameObject[1000];
+	static GameObject[] debrisList = new GameObject[1500];
 	static int currentIndex = 0;
 
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class DebrisManager : MonoBehaviour {
 
 	void AddDebris() {
 
-		if(debrisList[currentIndex] != null) {
+		if(debrisList[currentIndex] != null ) {
 			Destroy (debrisList[currentIndex]);
 		}
 
@@ -29,7 +29,7 @@ public class DebrisManager : MonoBehaviour {
 		currentIndex %= debrisList.Length;
 
 		if(currentIndex < 17) {
-			currentIndex = Random.Range (0,20);
+			currentIndex = Random.Range (0,17);
 		}
 	}
 }
