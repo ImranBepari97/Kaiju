@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 //Circular Array manager for debris
 public class DebrisManager : MonoBehaviour {
-
 	static GameObject[] debrisList = new GameObject[1500];
 	static int currentIndex = 0;
+
+	public int collateralLevel = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,6 @@ public class DebrisManager : MonoBehaviour {
 				savedScale.y * transform.localScale.y,
 				savedScale.z * transform.localScale.z);
 		}
-
 	}
 	
 	// Update is called once per frame

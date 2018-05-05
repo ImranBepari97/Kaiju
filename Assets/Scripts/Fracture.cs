@@ -12,8 +12,9 @@ public class Fracture : MonoBehaviour {
 	[SerializeField]
 	bool requiresSupport; //Bool to check if the thing requires support
 
-
 	bool hasBeenDestroyed; //Stops double spawning
+	public int collateralLevel = 0;
+	public int pointValue;
 
 
 	Rigidbody rb;
@@ -31,7 +32,7 @@ public class Fracture : MonoBehaviour {
 
 	void CheckForSupport() {
 		if(!hasBeenDestroyed && !Physics.Raycast(transform.position, Vector3.down, 0.3f) && requiresSupport) {
-			Break ();
+			Break (0);
 		}
 	}
 
@@ -41,7 +42,7 @@ public class Fracture : MonoBehaviour {
 			//Check if the force of the impact is big enough to fracture
 			if(controller = coll.gameObject.GetComponent<ControllerScript>()) {
 				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak && !hasBeenDestroyed ) {
-					Break ();
+					Break (0);
 
 				}
 			}
@@ -51,16 +52,20 @@ public class Fracture : MonoBehaviour {
 			Rigidbody rb; 
 			if (rb = coll.gameObject.GetComponent<Rigidbody> ()) {
 				if(rb.velocity.magnitude > forceToBreak * 2.25f && !hasBeenDestroyed) {
-					Break ();
+					Break (coll.gameObject.GetComponent<DebrisManager>().collateralLevel);
 				}
 			}
 		}
 	}
 
-	void Break() {
-		hasBeenDestroyed = true;
-		//Destroy this and replace it with the fractured version
-		Destroy (this.gameObject);
+	//collateralDegree is whether collateral damage is causing the break
+	void Break(int collateralDegree) {
+		hasBeenDestroyed = true; //Stop from being destroyed multiple times
+
+		PointSystem.totalPoints += pointValue * (collateralDegree + 1); //Add the points
+		Debug.Log ("Fracture: +" + pointValue * (collateralDegree + 1));
+
+		Destroy (this.gameObject); 	//Destroy this and replace it with the fractured version
 
 		GameObject thing;
 		if (transform.parent != null) {
@@ -70,5 +75,22 @@ public class Fracture : MonoBehaviour {
 			thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
 			thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
 		}
+			
+		Fracture[] thingsFrac;
+		if((thingsFrac = thing.GetComponentsInChildren<Fracture>()) != null) {
+			for(int i = 0; i < thingsFrac.Length; i++) {
+				Debug.Log ("Setting it");
+				thingsFrac [i].collateralLevel = collateralDegree + 1;
+			}
+		}
+
+		DebrisManager[] debrisSpawn;
+		if((debrisSpawn = thing.GetComponentsInChildren<DebrisManager>()) != null) {
+			for(int i = 0; i < debrisSpawn.Length; i++) {
+				Debug.Log ("Setting it");
+				debrisSpawn [i].collateralLevel = collateralDegree + 1;
+			}
+		}
+
 	}
 }

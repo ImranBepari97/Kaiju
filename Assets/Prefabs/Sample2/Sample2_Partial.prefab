@@ -1095,6 +1095,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114208224673832814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1111,6 +1113,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114229627885487642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1127,6 +1131,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114232001049005638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1143,6 +1149,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114250387524464344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1159,6 +1167,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114351795091193772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1175,6 +1185,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114496597018688994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1191,6 +1203,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114509450047722146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1207,6 +1221,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114585247536041560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1223,6 +1239,8 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
 --- !u!114 &114666244492032510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1239,3 +1257,5 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 1
   requiresSupport: 1
+  breakLevel: 0
+  pointValue: 25
