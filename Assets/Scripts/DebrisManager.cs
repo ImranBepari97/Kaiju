@@ -10,6 +10,16 @@ public class DebrisManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		AddDebris ();	
+
+		if(transform.parent != null) {
+			Vector3 savedScale = transform.parent.localScale;
+			transform.parent = null;
+			transform.localScale = new Vector3 (
+				savedScale.x * transform.localScale.x,
+				savedScale.y * transform.localScale.y,
+				savedScale.z * transform.localScale.z);
+		}
+
 	}
 	
 	// Update is called once per frame

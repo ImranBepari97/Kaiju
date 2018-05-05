@@ -37,6 +37,7 @@ public class ControllerScript : MonoBehaviour {
 		if(device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad)) {
 			if(currentMovingController == this) {
 				isDragging = false;
+				currentMovingController = null;
 			}
 		}
 
