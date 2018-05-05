@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114008790387474228}
   - component: {fileID: 54709886630469000}
   m_Layer: 0
-  m_Name: Sample2_Whole
+  m_Name: Sample2_whole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,3 +156,7 @@ MonoBehaviour:
     type: 2}
   forceToBreak: 0.75
   fractureModelRatio: 100
+  requiresSupport: 0
+  pointPopup: {fileID: 1396156266795628, guid: adaac78e4da140041a2e7adc9afacc69, type: 2}
+  collateralLevel: 0
+  pointValue: 100
