@@ -157,5 +157,6 @@ MonoBehaviour:
   forceToBreak: 0.75
   fractureModelRatio: 100
   requiresSupport: 0
-  breakLevel: 0
+  pointPopup: {fileID: 1396156266795628, guid: adaac78e4da140041a2e7adc9afacc69, type: 2}
+  collateralLevel: 0
   pointValue: 100

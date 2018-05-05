@@ -11,6 +11,8 @@ public class Fracture : MonoBehaviour {
 	float fractureModelRatio; //Ratio of the Whole:Fractured size
 	[SerializeField]
 	bool requiresSupport; //Bool to check if the thing requires support
+	[SerializeField]
+	GameObject pointPopup;
 
 	bool hasBeenDestroyed; //Stops double spawning
 	public int collateralLevel = 0;
@@ -63,7 +65,10 @@ public class Fracture : MonoBehaviour {
 		hasBeenDestroyed = true; //Stop from being destroyed multiple times
 
 		PointSystem.totalPoints += pointValue * (collateralDegree + 1); //Add the points
-		Debug.Log ("Fracture: +" + pointValue * (collateralDegree + 1));
+		GameObject popup = Instantiate(pointPopup, transform.position, Quaternion.identity);
+
+		popup.GetComponent<PointPopup>().textMesh.text = "+" + pointValue * (collateralDegree + 1);
+		
 
 		Destroy (this.gameObject); 	//Destroy this and replace it with the fractured version
 
