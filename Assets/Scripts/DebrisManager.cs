@@ -9,12 +9,18 @@ public class DebrisManager : MonoBehaviour {
 	public int collateralLevel = 0;
 	public bool beingHeld;
 
+	public bool shouldBeManaged = true;
+
 	// Use this for initialization
 	void Start () {
 		beingHeld = false;
-		AddDebris ();	
 
-		if(transform.parent != null) {
+		if(shouldBeManaged) {
+			AddDebris ();
+		}
+			
+
+		if(transform.parent != null && shouldBeManaged) {
 			Vector3 savedScale = transform.parent.localScale;
 			transform.parent = null;
 			transform.localScale = new Vector3 (

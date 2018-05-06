@@ -64,14 +64,21 @@ public class ControllerScript : MonoBehaviour {
 				grabbedObj.transform.parent = this.transform;
 				grabbedObjRb = grabbedObj.GetComponent<Rigidbody> ();
 				grabbedObjRb.useGravity = false;
-				grabbedObj.GetComponent<DebrisManager> ().beingHeld = true;
+				grabbedObjRb.isKinematic = true;
+				if(grabbedObj.GetComponent<DebrisManager> ()) {
+					grabbedObj.GetComponent<DebrisManager> ().beingHeld = true;
+				}
+
 			}
 		}
 
 		if (device.GetPressUp (SteamVR_Controller.ButtonMask.Trigger)) {
 			if(grabbedObj != null) {
-				grabbedObj.GetComponent<DebrisManager> ().beingHeld = false;
+				if(grabbedObj.GetComponent<DebrisManager> ()) {
+					grabbedObj.GetComponent<DebrisManager> ().beingHeld = false;
+				}
 				grabbedObjRb.useGravity = true;
+				grabbedObjRb.isKinematic = false;
 				grabbedObjRb.velocity = device.velocity;
 				grabbedObjRb.angularVelocity = device.angularVelocity;
 				grabbedObj.transform.parent = null;
