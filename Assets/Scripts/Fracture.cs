@@ -43,7 +43,7 @@ public class Fracture : MonoBehaviour {
 			ControllerScript controller;
 			//Check if the force of the impact is big enough to fracture
 			if(controller = coll.gameObject.GetComponent<ControllerScript>()) {
-				if(Mathf.Abs(controller.device.velocity.magnitude) > forceToBreak && !hasBeenDestroyed ) {
+				if(controller.device.velocity.magnitude > forceToBreak && !hasBeenDestroyed ) {
 					Break (0);
 
 				}
@@ -84,7 +84,6 @@ public class Fracture : MonoBehaviour {
 		Fracture[] thingsFrac;
 		if((thingsFrac = thing.GetComponentsInChildren<Fracture>()) != null) {
 			for(int i = 0; i < thingsFrac.Length; i++) {
-				Debug.Log ("Setting it");
 				thingsFrac [i].collateralLevel = collateralDegree + 1;
 			}
 		}
@@ -92,7 +91,6 @@ public class Fracture : MonoBehaviour {
 		DebrisManager[] debrisSpawn;
 		if((debrisSpawn = thing.GetComponentsInChildren<DebrisManager>()) != null) {
 			for(int i = 0; i < debrisSpawn.Length; i++) {
-				Debug.Log ("Setting it");
 				debrisSpawn [i].collateralLevel = collateralDegree + 1;
 			}
 		}

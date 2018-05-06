@@ -36,7 +36,7 @@ public class DebrisManager : MonoBehaviour {
 	}
 
 	//Adds current piece of debris to the list, makes sure no overcrowding
-	void AddDebris() {
+	public void AddDebris() {
 		if(debrisList[currentIndex] != null) {
 			if (debrisList [currentIndex].GetComponent<DebrisManager> ().beingHeld) {
 				//If the piece to be deleted is held by the player, just delete the next one

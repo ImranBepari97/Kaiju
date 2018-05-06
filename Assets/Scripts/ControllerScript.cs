@@ -59,33 +59,11 @@ public class ControllerScript : MonoBehaviour {
 
 		//Handle holding things
 		if (device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-			if(objToGrab != null) {
-				grabbedObj = objToGrab;
-				grabbedObj.transform.parent = this.transform;
-				grabbedObjRb = grabbedObj.GetComponent<Rigidbody> ();
-				grabbedObjRb.useGravity = false;
-				grabbedObjRb.isKinematic = true;
-				if(grabbedObj.GetComponent<DebrisManager> ()) {
-					grabbedObj.GetComponent<DebrisManager> ().beingHeld = true;
-				}
-
-			}
+			GrabObject ();
 		}
 
 		if (device.GetPressUp (SteamVR_Controller.ButtonMask.Trigger)) {
-			if(grabbedObj != null) {
-				if(grabbedObj.GetComponent<DebrisManager> ()) {
-					grabbedObj.GetComponent<DebrisManager> ().beingHeld = false;
-				}
-				grabbedObjRb.useGravity = true;
-				grabbedObjRb.isKinematic = false;
-				grabbedObjRb.velocity = device.velocity;
-				grabbedObjRb.angularVelocity = device.angularVelocity;
-				grabbedObj.transform.parent = null;
-				grabbedObjRb = null;
-				grabbedObj = null;
-
-			}
+			ReleaseObject ();
 		}
 
 		if(grabbedObj != null) {
@@ -93,6 +71,36 @@ public class ControllerScript : MonoBehaviour {
 			grabbedObjRb.angularVelocity = new Vector3(0,0,0);
 		}
 
+	}
+
+	void GrabObject() {
+		if(objToGrab != null) {
+			grabbedObj = objToGrab;
+			grabbedObj.transform.parent = this.transform;
+			grabbedObjRb = grabbedObj.GetComponent<Rigidbody> ();
+			grabbedObjRb.useGravity = false;
+			grabbedObjRb.isKinematic = true;
+			if(grabbedObj.GetComponent<DebrisManager> ()) {
+				grabbedObj.GetComponent<DebrisManager> ().beingHeld = true;
+			}
+
+		}
+	}
+
+	void ReleaseObject() {
+		if(grabbedObj != null) {
+			if(grabbedObj.GetComponent<DebrisManager> ()) {
+				grabbedObj.GetComponent<DebrisManager> ().beingHeld = false;
+			}
+			grabbedObjRb.useGravity = true;
+			grabbedObjRb.isKinematic = false;
+			grabbedObjRb.velocity = device.velocity;
+			grabbedObjRb.angularVelocity = device.angularVelocity;
+			grabbedObj.transform.parent = null;
+			grabbedObjRb = null;
+			grabbedObj = null;
+
+		}
 	}
 
 	void OnTriggerEnter(Collider coll) {
