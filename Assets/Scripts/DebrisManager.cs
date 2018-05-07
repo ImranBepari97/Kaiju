@@ -23,10 +23,10 @@ public class DebrisManager : MonoBehaviour {
 		if(transform.parent != null && shouldBeManaged) {
 			Vector3 savedScale = transform.parent.localScale;
 			transform.parent = null;
-			transform.localScale = new Vector3 (
-				savedScale.x * transform.localScale.x,
-				savedScale.y * transform.localScale.y,
-				savedScale.z * transform.localScale.z);
+			//transform.localScale = new Vector3 (
+			//	savedScale.x * transform.localScale.x,
+			//	savedScale.y * transform.localScale.y,
+			//	savedScale.z * transform.localScale.z);
 		}
 	}
 	
