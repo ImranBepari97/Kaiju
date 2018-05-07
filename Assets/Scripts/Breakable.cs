@@ -56,6 +56,8 @@ public class Breakable : MonoBehaviour {
 		GetComponent<DebrisManager> ().shouldBeManaged = true;
 		GetComponent<DebrisManager> ().AddDebris ();
 
+		//Stop being breakable
+		Destroy (this);
 	}
 
 }
