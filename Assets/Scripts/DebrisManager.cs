@@ -58,6 +58,5 @@ public class DebrisManager : MonoBehaviour {
 		if(currentIndex < 17) {
 			currentIndex = Random.Range (0,17);
 		}
-
 	}
 }
