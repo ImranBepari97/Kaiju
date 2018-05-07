@@ -12,6 +12,8 @@ public class Fracture : MonoBehaviour {
 	[SerializeField]
 	bool requiresSupport; //Bool to check if the thing requires support
 	[SerializeField]
+	float supportDistance = 0.3f;
+	[SerializeField]
 	GameObject pointPopup;
 
 	bool hasBeenDestroyed; //Stops double spawning
@@ -33,7 +35,7 @@ public class Fracture : MonoBehaviour {
 	}
 
 	void CheckForSupport() {
-		if(!hasBeenDestroyed && !Physics.Raycast(transform.position, Vector3.down, 0.3f) && requiresSupport) {
+		if(!hasBeenDestroyed && !Physics.Raycast(transform.position, Vector3.down, supportDistance) && requiresSupport) {
 			Break (0);
 		}
 	}
