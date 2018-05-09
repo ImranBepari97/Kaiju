@@ -75,14 +75,17 @@ public class Fracture : MonoBehaviour {
 		Destroy (this.gameObject); 	//Destroy this and replace it with the fractured version
 
 		GameObject thing;
+
 		if (transform.parent != null) {
-			thing = Instantiate (fractureObject, transform.parent.position, Quaternion.identity);
+			thing = Instantiate (fractureObject, transform.parent.position, transform.parent.rotation);
 			thing.transform.localScale = new Vector3(transform.parent.localScale.x / fractureModelRatio, transform.parent.localScale.y / fractureModelRatio, transform.parent.localScale.z / fractureModelRatio);
 		} else {
-			thing = Instantiate (fractureObject, transform.position, Quaternion.identity);
+			thing = Instantiate (fractureObject, transform.position, transform.rotation);
 			thing.transform.localScale = new Vector3(transform.localScale.x / fractureModelRatio, transform.localScale.y / fractureModelRatio, transform.localScale.z / fractureModelRatio);
 		}
 			
+		//thing.transform.localRotation = transform.localRotation;
+
 		Fracture[] thingsFrac;
 		if((thingsFrac = thing.GetComponentsInChildren<Fracture>()) != null) {
 			for(int i = 0; i < thingsFrac.Length; i++) {
