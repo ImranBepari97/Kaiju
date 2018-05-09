@@ -32,7 +32,8 @@ public class DebrisManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(this.gameObject.name == "TreeWep") 
+			Debug.Log (this.gameObject + " " + GetComponent<Rigidbody>().GetRelativePointVelocity(transform.position).magnitude);
 	}
 
 	//Adds current piece of debris to the list, makes sure no overcrowding
