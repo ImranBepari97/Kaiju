@@ -77,10 +77,11 @@ public class ControllerScript : MonoBehaviour {
 			joint.connectedBody = grabbedObjRb;
 			joint.enablePreprocessing = false;
 			grabbedObjRb.useGravity = false;
-			if(grabbedObj.GetComponent<DebrisManager> ()) {
-				grabbedObj.GetComponent<DebrisManager> ().beingHeld = true;
+			DebrisManager piece;
+			if(piece = grabbedObj.GetComponent<DebrisManager> ()) {
+				piece.beingHeld = true;
+				piece.collateralLevel = 1;
 			}
-
 		}
 	}
 

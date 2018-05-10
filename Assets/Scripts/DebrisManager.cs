@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //Circular Array manager for debris
 public class DebrisManager : MonoBehaviour {
-	static GameObject[] debrisList = new GameObject[1000];
+	public static GameObject[] debrisList = new GameObject[750];
 	static int currentIndex = 0;
 
 	public int collateralLevel = 0;
