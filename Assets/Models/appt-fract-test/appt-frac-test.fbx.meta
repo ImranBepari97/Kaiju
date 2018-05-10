@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: bee4760c393950642a2cf2b55df58a35
+timeCreated: 1525714741
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: apartment_large_mesh.001_cell
+    100002: apartment_large_mesh.001_cell.001
+    100004: apartment_large_mesh.001_cell.002
+    100006: apartment_large_mesh.001_cell.003
+    100008: apartment_large_mesh.001_cell.004
+    100010: apartment_large_mesh.001_cell.005
+    100012: apartment_large_mesh.001_cell.006
+    100014: apartment_large_mesh.001_cell.007
+    100016: apartment_large_mesh.001_cell.008
+    100018: apartment_large_mesh.001_cell.009
+    100020: apartment_large_mesh.023
+    100022: apartment_large_mesh.024
+    100024: apartment_large_mesh.025
+    100026: apartment_large_mesh.026
+    100028: apartment_large_mesh.027
+    100030: apartment_large_mesh.028
+    100032: apartment_large_mesh.029
+    100034: apartment_large_mesh.031
+    100036: apartment_large_mesh.032
+    100038: apartment_large_mesh.033
+    100040: apartment_large_mesh.034
+    100042: apartment_large_mesh.035
+    100044: apartment_large_mesh.036
+    100046: apartment_large_mesh.037
+    100048: apartment_large_mesh.038
+    100050: apartment_large_mesh.039
+    100052: apartment_large_mesh.040
+    100054: apartment_large_mesh.041
+    100056: apartment_large_mesh.042
+    100058: apartment_large_mesh.043
+    100060: apartment_large_mesh.044
+    100062: //RootNode
+    400000: apartment_large_mesh.001_cell
+    400002: apartment_large_mesh.001_cell.001
+    400004: apartment_large_mesh.001_cell.002
+    400006: apartment_large_mesh.001_cell.003
+    400008: apartment_large_mesh.001_cell.004
+    400010: apartment_large_mesh.001_cell.005
+    400012: apartment_large_mesh.001_cell.006
+    400014: apartment_large_mesh.001_cell.007
+    400016: apartment_large_mesh.001_cell.008
+    400018: apartment_large_mesh.001_cell.009
+    400020: apartment_large_mesh.023
+    400022: apartment_large_mesh.024
+    400024: apartment_large_mesh.025
+    400026: apartment_large_mesh.026
+    400028: apartment_large_mesh.027
+    400030: apartment_large_mesh.028
+    400032: apartment_large_mesh.029
+    400034: apartment_large_mesh.031
+    400036: apartment_large_mesh.032
+    400038: apartment_large_mesh.033
+    400040: apartment_large_mesh.034
+    400042: apartment_large_mesh.035
+    400044: apartment_large_mesh.036
+    400046: apartment_large_mesh.037
+    400048: apartment_large_mesh.038
+    400050: apartment_large_mesh.039
+    400052: apartment_large_mesh.040
+    400054: apartment_large_mesh.041
+    400056: apartment_large_mesh.042
+    400058: apartment_large_mesh.043
+    400060: apartment_large_mesh.044
+    400062: //RootNode
+    2100000: apartment_material.002
+    2100002: internal
+    2300000: apartment_large_mesh.001_cell
+    2300002: apartment_large_mesh.001_cell.001
+    2300004: apartment_large_mesh.001_cell.002
+    2300006: apartment_large_mesh.001_cell.003
+    2300008: apartment_large_mesh.001_cell.004
+    2300010: apartment_large_mesh.001_cell.005
+    2300012: apartment_large_mesh.001_cell.006
+    2300014: apartment_large_mesh.001_cell.007
+    2300016: apartment_large_mesh.001_cell.008
+    2300018: apartment_large_mesh.001_cell.009
+    2300020: apartment_large_mesh.023
+    2300022: apartment_large_mesh.024
+    2300024: apartment_large_mesh.025
+    2300026: apartment_large_mesh.026
+    2300028: apartment_large_mesh.027
+    2300030: apartment_large_mesh.028
+    2300032: apartment_large_mesh.029
+    2300034: apartment_large_mesh.031
+    2300036: apartment_large_mesh.032
+    2300038: apartment_large_mesh.033
+    2300040: apartment_large_mesh.034
+    2300042: apartment_large_mesh.035
+    2300044: apartment_large_mesh.036
+    2300046: apartment_large_mesh.037
+    2300048: apartment_large_mesh.038
+    2300050: apartment_large_mesh.039
+    2300052: apartment_large_mesh.040
+    2300054: apartment_large_mesh.041
+    2300056: apartment_large_mesh.042
+    2300058: apartment_large_mesh.043
+    2300060: apartment_large_mesh.044
+    3300000: apartment_large_mesh.001_cell
+    3300002: apartment_large_mesh.001_cell.001
+    3300004: apartment_large_mesh.001_cell.002
+    3300006: apartment_large_mesh.001_cell.003
+    3300008: apartment_large_mesh.001_cell.004
+    3300010: apartment_large_mesh.001_cell.005
+    3300012: apartment_large_mesh.001_cell.006
+    3300014: apartment_large_mesh.001_cell.007
+    3300016: apartment_large_mesh.001_cell.008
+    3300018: apartment_large_mesh.001_cell.009
+    3300020: apartment_large_mesh.023
+    3300022: apartment_large_mesh.024
+    3300024: apartment_large_mesh.025
+    3300026: apartment_large_mesh.026
+    3300028: apartment_large_mesh.027
+    3300030: apartment_large_mesh.028
+    3300032: apartment_large_mesh.029
+    3300034: apartment_large_mesh.031
+    3300036: apartment_large_mesh.032
+    3300038: apartment_large_mesh.033
+    3300040: apartment_large_mesh.034
+    3300042: apartment_large_mesh.035
+    3300044: apartment_large_mesh.036
+    3300046: apartment_large_mesh.037
+    3300048: apartment_large_mesh.038
+    3300050: apartment_large_mesh.039
+    3300052: apartment_large_mesh.040
+    3300054: apartment_large_mesh.041
+    3300056: apartment_large_mesh.042
+    3300058: apartment_large_mesh.043
+    3300060: apartment_large_mesh.044
+    4300000: apartment_large_mesh.044
+    4300002: apartment_large_mesh.043
+    4300004: apartment_large_mesh.042
+    4300006: apartment_large_mesh.041
+    4300008: apartment_large_mesh.040
+    4300010: apartment_large_mesh.039
+    4300012: apartment_large_mesh.038
+    4300014: apartment_large_mesh.037
+    4300016: apartment_large_mesh.036
+    4300018: apartment_large_mesh.035
+    4300020: apartment_large_mesh.034
+    4300022: apartment_large_mesh.033
+    4300024: apartment_large_mesh.032
+    4300026: apartment_large_mesh.031
+    4300028: apartment_large_mesh.029
+    4300030: apartment_large_mesh.028
+    4300032: apartment_large_mesh.027
+    4300034: apartment_large_mesh.026
+    4300036: apartment_large_mesh.025
+    4300038: apartment_large_mesh.024
+    4300040: apartment_large_mesh.023
+    4300042: apartment_large_mesh.001_cell.009
+    4300044: apartment_large_mesh.001_cell.008
+    4300046: apartment_large_mesh.001_cell.007
+    4300048: apartment_large_mesh.001_cell.006
+    4300050: apartment_large_mesh.001_cell.005
+    4300052: apartment_large_mesh.001_cell.004
+    4300054: apartment_large_mesh.001_cell.003
+    4300056: apartment_large_mesh.001_cell.002
+    4300058: apartment_large_mesh.001_cell.001
+    4300060: apartment_large_mesh.001_cell
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

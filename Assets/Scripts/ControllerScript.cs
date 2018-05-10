@@ -20,6 +20,7 @@ public class ControllerScript : MonoBehaviour {
 	GameObject grabbedObj;
 	Rigidbody grabbedObjRb;
 	//Vector3 grabbedOffset;
+	FixedJoint joint;
 
 
 	// Use this for initialization
@@ -65,12 +66,6 @@ public class ControllerScript : MonoBehaviour {
 		if (device.GetPressUp (SteamVR_Controller.ButtonMask.Trigger)) {
 			ReleaseObject ();
 		}
-
-		if(grabbedObj != null) {
-			grabbedObjRb.velocity = new Vector3(0,0,0);
-			grabbedObjRb.angularVelocity = new Vector3(0,0,0);
-		}
-
 	}
 
 	void GrabObject() {
@@ -78,12 +73,15 @@ public class ControllerScript : MonoBehaviour {
 			grabbedObj = objToGrab;
 			grabbedObj.transform.parent = this.transform;
 			grabbedObjRb = grabbedObj.GetComponent<Rigidbody> ();
+			joint = gameObject.AddComponent<FixedJoint> ();
+			joint.connectedBody = grabbedObjRb;
+			joint.enablePreprocessing = false;
 			grabbedObjRb.useGravity = false;
-			grabbedObjRb.isKinematic = true;
-			if(grabbedObj.GetComponent<DebrisManager> ()) {
-				grabbedObj.GetComponent<DebrisManager> ().beingHeld = true;
+			DebrisManager piece;
+			if(piece = grabbedObj.GetComponent<DebrisManager> ()) {
+				piece.beingHeld = true;
+				piece.collateralLevel = 1;
 			}
-
 		}
 	}
 
@@ -92,11 +90,12 @@ public class ControllerScript : MonoBehaviour {
 			if(grabbedObj.GetComponent<DebrisManager> ()) {
 				grabbedObj.GetComponent<DebrisManager> ().beingHeld = false;
 			}
+			Destroy(joint);
 			grabbedObjRb.useGravity = true;
-			grabbedObjRb.isKinematic = false;
 			grabbedObjRb.velocity = device.velocity;
 			grabbedObjRb.angularVelocity = device.angularVelocity;
 			grabbedObj.transform.parent = null;
+
 			grabbedObjRb = null;
 			grabbedObj = null;
 

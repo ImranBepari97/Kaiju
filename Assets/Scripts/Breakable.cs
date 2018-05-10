@@ -21,7 +21,7 @@ public class Breakable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (rb.velocity + " " + rb.angularVelocity);
+		//Debug.Log (rb.velocity + " " + rb.angularVelocity);
 	}
 
 	void OnCollisionEnter(Collision coll) {
@@ -56,6 +56,8 @@ public class Breakable : MonoBehaviour {
 		GetComponent<DebrisManager> ().shouldBeManaged = true;
 		GetComponent<DebrisManager> ().AddDebris ();
 
+		//Stop being breakable
+		Destroy (this);
 	}
 
 }

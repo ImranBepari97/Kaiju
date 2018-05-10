@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //Circular Array manager for debris
 public class DebrisManager : MonoBehaviour {
-	static GameObject[] debrisList = new GameObject[1000];
+	public static GameObject[] debrisList = new GameObject[750];
 	static int currentIndex = 0;
 
 	public int collateralLevel = 0;
@@ -23,16 +23,17 @@ public class DebrisManager : MonoBehaviour {
 		if(transform.parent != null && shouldBeManaged) {
 			Vector3 savedScale = transform.parent.localScale;
 			transform.parent = null;
-			transform.localScale = new Vector3 (
-				savedScale.x * transform.localScale.x,
-				savedScale.y * transform.localScale.y,
-				savedScale.z * transform.localScale.z);
+			//transform.localScale = new Vector3 (
+			//	savedScale.x * transform.localScale.x,
+			//	savedScale.y * transform.localScale.y,
+			//	savedScale.z * transform.localScale.z);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(this.gameObject.name == "TreeWep") 
+			Debug.Log (this.gameObject + " " + GetComponent<Rigidbody>().GetRelativePointVelocity(transform.position).magnitude);
 	}
 
 	//Adds current piece of debris to the list, makes sure no overcrowding
@@ -58,6 +59,5 @@ public class DebrisManager : MonoBehaviour {
 		if(currentIndex < 17) {
 			currentIndex = Random.Range (0,17);
 		}
-
 	}
 }
