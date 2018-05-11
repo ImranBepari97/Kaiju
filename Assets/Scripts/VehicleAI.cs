@@ -34,7 +34,7 @@ public class VehicleAI : MonoBehaviour {
 
 	void Drive() {
 		// || agent.velocity.magnitude < 0.2f
-		if ((transform.position - destination).magnitude < 0.5f ) {
+		if ((transform.position - destination).magnitude < 0.5f || agent.speed < 0.1f) {
 			FindRandomPoint ();
 		} else {
 			agent.destination = destination;
