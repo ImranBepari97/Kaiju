@@ -22,9 +22,20 @@ public class ControllerScript : MonoBehaviour {
 	//Vector3 grabbedOffset;
 	FixedJoint joint;
 
+    private static PointSystem pointSystem;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        //Set up references
+        pointSystem = GameObject.Find("PointDisplay").GetComponent<PointSystem>();
+        if (pointSystem == null)
+        {
+            throw new System.Exception("Cannot find point system");
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
 		trackedObject = GetComponent<SteamVR_TrackedObject> ();
 		device = SteamVR_Controller.Input ((int)trackedObject.index);
 
@@ -66,6 +77,16 @@ public class ControllerScript : MonoBehaviour {
 		if (device.GetPressUp (SteamVR_Controller.ButtonMask.Trigger)) {
 			ReleaseObject ();
 		}
+
+        //Restarting the game
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu) || Input.GetKeyDown(KeyCode.R))
+        {
+            GameObject g = GameObject.Find("Game_Over_Screen");
+            if (g != null)
+            {
+                g.GetComponent<GameOver>().Restart();
+            }
+        }
 	}
 
 	void GrabObject() {
