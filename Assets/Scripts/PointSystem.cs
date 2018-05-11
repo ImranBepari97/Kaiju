@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PointSystem : MonoBehaviour {
 
-    public static readonly float MINUTES_IN_GAME = 1.0f;
+    public static readonly float MINUTES_IN_GAME = 5.0f;
 	public static int totalPoints = 0;
     private static int finalScore;
     public static int highscore { get; private set; }
