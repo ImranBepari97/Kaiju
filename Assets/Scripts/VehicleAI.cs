@@ -33,8 +33,9 @@ public class VehicleAI : MonoBehaviour {
 	}
 
 	void Drive() {
+		Debug.DrawLine (transform.position, agent.destination);
 		// || agent.velocity.magnitude < 0.2f
-		if ((transform.position - destination).magnitude < 0.5f || agent.speed < 0.1f) {
+		if ((transform.position - destination).magnitude < 0.5f || agent.speed < 0.2f || agent.destination == null) {
 			FindRandomPoint ();
 		} else {
 			agent.destination = destination;
@@ -48,7 +49,7 @@ public class VehicleAI : MonoBehaviour {
 
 	void FindRandomPoint() {
 		//Random point within 10m
-		Vector3 rand = Random.insideUnitSphere * 10;
+		Vector3 rand = transform.position + (Random.insideUnitSphere * 10);
 
 		NavMeshHit navHit;
 		NavMesh.SamplePosition (rand, out navHit, 10, -1);
