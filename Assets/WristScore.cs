@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WristScore : MonoBehaviour {
-
-    [SerializeField]
     private Text text;
 
 	void Awake () {
