@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4272641191473068}
   - component: {fileID: 33022122830428038}
   - component: {fileID: 23724869421167940}
-  - component: {fileID: 64938179334105184}
   - component: {fileID: 114888705901511350}
   - component: {fileID: 114525098009873824}
   - component: {fileID: 54114713493312014}
+  - component: {fileID: 65321854802735958}
   m_Layer: 0
   m_Name: RoadSign1
   m_TagString: Debris
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4272641191473068
@@ -38,13 +38,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1320108710791982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.958, y: 0.002671945, z: -0.25963858}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 3.359, y: 0.00013359725, z: 6.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &23724869421167940
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -101,8 +101,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &64938179334105184
-MeshCollider:
+--- !u!65 &65321854802735958
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -110,11 +110,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 7d0b7fd7d5d75454babb9eddd4561c29, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.9012407, y: 0.17279911, z: 0.055488028}
+  m_Center: {x: 0.42441303, y: 0.42354482, z: -0.00026197545}
 --- !u!114 &114525098009873824
 MonoBehaviour:
   m_ObjectHideFlags: 1

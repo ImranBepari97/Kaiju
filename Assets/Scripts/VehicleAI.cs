@@ -49,10 +49,10 @@ public class VehicleAI : MonoBehaviour {
 
 	void FindRandomPoint() {
 		//Random point within 10m
-		Vector3 rand = transform.position + (Random.insideUnitSphere * 10);
+		Vector3 rand = transform.position + (Random.insideUnitSphere * 5);
 
 		NavMeshHit navHit;
-		NavMesh.SamplePosition (rand, out navHit, 10, -1);
+		NavMesh.SamplePosition (rand, out navHit, 5, -1);
 
 		destination = navHit.position;
 	
