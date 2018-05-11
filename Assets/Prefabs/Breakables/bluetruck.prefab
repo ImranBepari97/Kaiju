@@ -29,7 +29,7 @@ GameObject:
   m_Name: bluetruck
   m_TagString: Debris
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4665901782787100
@@ -39,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547062763297706}
   m_LocalRotation: {x: 0, y: -0.26218924, z: 0, w: 0.96501654}
-  m_LocalPosition: {x: 1.548, y: 0.002418253, z: 5.311}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 5.6941185, y: -0.00013824835, z: 2.236207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.370662, y: 2.5180607, z: 5.376857}
-  m_Center: {x: -0.028665774, y: 1.2566123, z: 0.0000026813614}
+  m_Size: {x: 0.11120668, y: 0.14165244, z: 0.2701137}
+  m_Center: {x: 0.00048032403, y: 0.06840818, z: -0.0010273159}
 --- !u!114 &114000603203044534
 MonoBehaviour:
   m_ObjectHideFlags: 1
