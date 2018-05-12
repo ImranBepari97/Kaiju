@@ -63,7 +63,7 @@ public class Fracture : MonoBehaviour {
 	}
 
 	//collateralDegree is whether collateral damage is causing the break
-	void Break(int collateralDegree) {
+	public void Break(int collateralDegree) {
 		hasBeenDestroyed = true; //Stop from being destroyed multiple times
 
 		PointSystem.totalPoints += pointValue * (collateralDegree + 1); //Add the points

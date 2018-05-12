@@ -21,7 +21,6 @@ public class Breakable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log (rb.velocity + " " + rb.angularVelocity);
 	}
 
 	void OnCollisionEnter(Collision coll) {
@@ -45,7 +44,7 @@ public class Breakable : MonoBehaviour {
 		}
 	}
 
-	void Break(int collateralDegree) {
+	public void Break(int collateralDegree) {
 		rb.constraints = RigidbodyConstraints.None;
 
 		PointSystem.totalPoints += pointValue * (collateralDegree + 1); //Add the points
