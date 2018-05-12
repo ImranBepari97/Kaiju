@@ -10,7 +10,8 @@ public class Explosive : MonoBehaviour {
 	float explosiveForce;
 	[SerializeField]
 	float explosiveRadius;
-
+	[SerializeField]
+	GameObject particles;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +39,8 @@ public class Explosive : MonoBehaviour {
 					br.Break (1);
 				}
 			}
-
+			//Spawn the particles
+			Instantiate (particles, transform.position, Quaternion.identity);
 			Destroy (this.gameObject);
 		}
 	}

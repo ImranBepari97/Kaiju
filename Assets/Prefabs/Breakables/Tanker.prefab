@@ -745,5 +745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e19b7a5567a7e408bd72403a6898ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosiveForce: 500
+  explosiveForce: 300
   explosiveRadius: 1
+  particles: {fileID: 1391774169080654, guid: e44e3bf23adcc6c48b61f94e67bea80c, type: 2}
