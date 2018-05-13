@@ -17,7 +17,9 @@ public class GameOver : MonoBehaviour {
         s += "<b>Highscore</b>\n";
         s += highscore;
 
-        GetComponentInChildren<Text>().text = s;
+		if (GetComponentInChildren<Text> ()) {
+			GetComponentInChildren<Text> ().text = s;
+		}
     }
 	
 	public void Restart()
