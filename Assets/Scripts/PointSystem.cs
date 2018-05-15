@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class PointSystem : MonoBehaviour {
 
-    public static readonly float MINUTES_IN_GAME = 5.0f;
+    public static readonly float MINUTES_IN_GAME = 4.0f;
 	public static int totalPoints = 0;
     private static int finalScore;
-    public static int highscore { get; private set; }
+    public static int Highscore { get; private set; }
     public static float TimeRemaining { get; private set; }
     public static bool IsRunning { get; private set; }
 
@@ -17,8 +17,8 @@ public class PointSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        highscore = PlayerPrefs.GetInt("highscore", 0);
-        Debug.Log("Highscore set to: " + highscore + (highscore == 0 ? " (may be first game)" : ""));
+        Highscore = PlayerPrefs.GetInt("highscore", 0);
+        Debug.Log("Highscore set to: " + Highscore + (Highscore == 0 ? " (may be first game)" : ""));
         StartGame();
 	}
 
@@ -50,11 +50,11 @@ public class PointSystem : MonoBehaviour {
 
         IsRunning = false; //Stop game
         finalScore = totalPoints; //Copy score
-        if (finalScore > highscore)
+        if (finalScore > Highscore)
         {
-            highscore = finalScore;
+            Highscore = finalScore;
             PlayerPrefs.SetInt("lastscore", finalScore);
-            PlayerPrefs.SetInt("highscore", highscore);
+            PlayerPrefs.SetInt("highscore", Highscore);
         }
         SceneManager.LoadScene("GameOver");
     }
