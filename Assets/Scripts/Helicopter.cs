@@ -24,6 +24,12 @@ public class Helicopter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (this.GetComponent<Breakable>() == null)
+        {
+            Destroy(this);
+            return;
+        }
+
 		if (progress >= 1f)
         {
             progress = 0f;
@@ -48,5 +54,10 @@ public class Helicopter : MonoBehaviour {
         }
 
         return chosen;
+    }
+
+    private void Crash()
+    {
+        Destroy(this.GetComponent<Animation>());
     }
 }
