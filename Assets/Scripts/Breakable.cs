@@ -12,15 +12,20 @@ public class Breakable : MonoBehaviour {
 	GameObject pointPopup;
 
 	Rigidbody rb;
+	DebrisManager dm;
 
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		dm = GetComponent<DebrisManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(dm.beingHeld) {
+			Break (0);
+		}
 	}
 
 	void OnCollisionEnter(Collision coll) {
@@ -52,8 +57,8 @@ public class Breakable : MonoBehaviour {
 
 		popup.GetComponent<PointPopup>().textMesh.text = "+" + pointValue * (collateralDegree + 1);
 
-		GetComponent<DebrisManager> ().shouldBeManaged = true;
-		GetComponent<DebrisManager> ().AddDebris ();
+		dm.shouldBeManaged = true;
+		dm.AddDebris ();
 
 		//Stop being breakable
 		Destroy (this);
