@@ -10,10 +10,13 @@ public class WalkieTalkie : MonoBehaviour {
     [SerializeField]
     private AudioClip music;
 
+    private AudioClip walkieTalkieBeep;
+
     void Awake()
     {
         alreadyQueued = new List<AudioClip>();
         queue = new Queue<AudioClip>();
+        walkieTalkieBeep = Resources.Load<AudioClip>("Audio/SFX/walkie-talkie-beep");
         StartCoroutine(VoiceScheduler(this.gameObject.AddComponent<AudioSource>()));
         StartCoroutine(PlayMusicTwice(this.gameObject.AddComponent<AudioSource>(), music));
     }
@@ -79,7 +82,12 @@ public class WalkieTalkie : MonoBehaviour {
         {
             if (queue.Count > 0 && !voiceAudioSource.isPlaying)
             {
-                voiceAudioSource.PlayOneShot(queue.Dequeue());
+                voiceAudioSource.PlayOneShot(walkieTalkieBeep);
+                yield return new WaitForSeconds(walkieTalkieBeep.length);
+                AudioClip x = queue.Dequeue();
+                voiceAudioSource.PlayOneShot(x);
+                yield return new WaitForSeconds(x.length);
+                voiceAudioSource.PlayOneShot(walkieTalkieBeep);
             }
             yield return new WaitForEndOfFrame();
         }
@@ -87,7 +95,7 @@ public class WalkieTalkie : MonoBehaviour {
 
     IEnumerator PlayMusicTwice(AudioSource musicAudioSource, AudioClip musicClip)
     {
-        musicAudioSource.volume = 0.5f;
+        musicAudioSource.volume = 0.1f;
         musicAudioSource.clip = musicClip;
         yield return new WaitForSeconds(3f);
         musicAudioSource.Play();
