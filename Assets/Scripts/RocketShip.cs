@@ -37,7 +37,7 @@ public class RocketShip : MonoBehaviour {
 		}
 
 		if(!dm.beingHeld && br == null) {
-			rb.AddExplosionForce (15f, fire.transform.position, 2f);
+			rb.AddExplosionForce (18f, fire.transform.position, 2f);
 		}
 
 
