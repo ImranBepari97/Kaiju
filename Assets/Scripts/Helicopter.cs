@@ -8,6 +8,7 @@ public class Helicopter : MonoBehaviour {
     private Transform waypoints;
     private Transform from, to;
     private float progress;
+    private AudioSource flightAS;
 
     [SerializeField]
     private float speedCoeficent;
@@ -20,12 +21,14 @@ public class Helicopter : MonoBehaviour {
         this.transform.position = from.position;
         this.transform.LookAt(to);
         this.transform.Rotate(-90f, 0f, 0f, Space.Self);
+        flightAS = this.GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (this.GetComponent<Breakable>() == null)
         {
+            Crash();
             Destroy(this);
             return;
         }
@@ -59,5 +62,25 @@ public class Helicopter : MonoBehaviour {
     private void Crash()
     {
         Destroy(this.GetComponent<Animation>());
+        AudioSource crashAS = this.gameObject.AddComponent<AudioSource>();
+        //Setup audio source to mimic flightAS
+        crashAS.volume = flightAS.volume * 0.5f;
+        crashAS.spatialBlend = flightAS.spatialBlend;
+        crashAS.rolloffMode = flightAS.rolloffMode;
+        crashAS.minDistance = flightAS.minDistance;
+        crashAS.maxDistance = flightAS.maxDistance;
+        crashAS.PlayOneShot(Resources.Load<AudioClip>("Audio/SFX/chopper_dieing"));
+        StartCoroutine(FadeoutFlightAudioSource());
+    }
+
+    private IEnumerator FadeoutFlightAudioSource()
+    {
+        for (float t = 0f; t < 1.0f; t += Time.deltaTime)
+        {
+            flightAS.volume = Mathf.Lerp(0f, 0.5f, t);
+            yield return new WaitForFixedUpdate();
+        }
+        Destroy(flightAS);
+        yield return null;
     }
 }
