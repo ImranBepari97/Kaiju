@@ -13,6 +13,9 @@ public class Explosive : MonoBehaviour {
 	[SerializeField]
 	GameObject particles;
 
+    [SerializeField]
+    List<AudioClip> DestructionSounds;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();	
@@ -39,6 +42,13 @@ public class Explosive : MonoBehaviour {
 					br.Break (1);
 				}
 			}
+            //Spawn sound
+            if (DestructionSounds.Capacity > 0)
+            {
+                AudioSource.PlayClipAtPoint(DestructionSounds[(int)Mathf.Round(Random.Range(0, DestructionSounds.Capacity - 1))], transform.position, 0.125f);
+            }
+            
+
 			//Spawn the particles
 			Instantiate (particles, transform.position, Quaternion.identity);
 			Destroy (this.gameObject);
