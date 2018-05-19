@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+
 public class WalkieTalkie : MonoBehaviour {
 
     private List<AudioClip> alreadyQueued;
     private Queue<AudioClip> queue;
+    [SerializeField]
+    private AudioClip music;
 
     void Awake()
     {
         alreadyQueued = new List<AudioClip>();
         queue = new Queue<AudioClip>();
-        StartCoroutine(VoiceScheduler());
+        StartCoroutine(VoiceScheduler(this.gameObject.AddComponent<AudioSource>()));
+        StartCoroutine(PlayMusicTwice(this.gameObject.AddComponent<AudioSource>(), music));
     }
 
     // Update is called once per frame
@@ -69,16 +72,26 @@ public class WalkieTalkie : MonoBehaviour {
         }
     }
 
-    IEnumerator VoiceScheduler()
+    IEnumerator VoiceScheduler(AudioSource voiceAudioSource)
     {
-        AudioSource a = GetComponent<AudioSource>();
+        voiceAudioSource.priority = 53;
         while (true)
         {
-            if (queue.Count > 0 && !a.isPlaying)
+            if (queue.Count > 0 && !voiceAudioSource.isPlaying)
             {
-                a.PlayOneShot(queue.Dequeue());
+                voiceAudioSource.PlayOneShot(queue.Dequeue());
             }
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    IEnumerator PlayMusicTwice(AudioSource musicAudioSource, AudioClip musicClip)
+    {
+        musicAudioSource.volume = 0.5f;
+        musicAudioSource.clip = musicClip;
+        yield return new WaitForSeconds(3f);
+        musicAudioSource.Play();
+        yield return new WaitForSeconds(musicClip.length + 3f);
+        musicAudioSource.Play();
     }
 }
