@@ -16,7 +16,7 @@ public class WristScore : MonoBehaviour {
         s += "<b>Score</b>\n";
         s += PointSystem.totalPoints + "\n";
         s += "<b>Highscore</b>\n";
-        s += "N/A";
+        s += PointSystem.Highscore;
         text.text = s;
     }
 }
