@@ -53,9 +53,9 @@ public class PointSystem : MonoBehaviour {
         if (finalScore > Highscore)
         {
             Highscore = finalScore;
-            PlayerPrefs.SetInt("lastscore", finalScore);
-            PlayerPrefs.SetInt("highscore", Highscore);
         }
+        PlayerPrefs.SetInt("lastscore", finalScore);
+        PlayerPrefs.SetInt("highscore", Highscore);
         SceneManager.LoadScene("GameOver");
     }
 
